@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tester</title>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const container = document.getElementById("paramContainer");
+				const content = Array.from(new URLSearchParams(window.location.search).entries())
+					.map(([key, val]) => key + ": " + val)
+					.join("\n");
+
+				container.innerText = content;
+			});
+		</script>
+	</head>
+	<body>
+		<div id="paramContainer"></div>
+	</body>
+</html>
